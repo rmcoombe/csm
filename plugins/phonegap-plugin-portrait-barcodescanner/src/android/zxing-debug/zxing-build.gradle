@@ -1,0 +1,15 @@
+repositories{
+    jcenter()
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile(name:'zxing-debug', ext:'aar')
+}
+
+android {
+    packagingOptions {
+    }
+}

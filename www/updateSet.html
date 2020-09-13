@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>NIO Tyre App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="sweetalert-master/dist/sweetalert.min.js"></script>
+<script src="https://api.backendless.com/sdk/js/latest/backendless.min.js"></script>
+<script src="js/index.js" type="text/javascript"></script>
+<script src="js/script.js" type="text/javascript"></script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue-grey w3-card w3-left-align w3-small">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-left w3-padding-large w3-hover-white w3-large w3-blue-grey" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="home.html" class="w3-bar-item w3-button w3-padding-large w3-blue-grey"><i class="fa fa-home fa-2x w3-padding-10 w3-text-white"></i></a>
+    <a href="viewSets.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">View Sets</a>
+    <a href="updatSet.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Update Set</a>
+    <a href="clear.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Clear</a>
+    <a href="replace.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Replace or Add Wheel</a>
+
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="viewSets.html" class="w3-bar-item w3-button w3-padding-large">View Sets</a>
+    <a href="updateSet.html" class="w3-bar-item w3-button w3-padding-large">Update Set</a>
+    <a href="clear.html" class="w3-bar-item w3-button w3-padding-large">Clear</a>
+    <a href="replace.html" class="w3-bar-item w3-button w3-padding-large">Replace or Add Wheel</a>
+
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-white w3-center" style="padding-top:60px; padding-bottom:10px; padding-right: 10px; padding-left: 10px">
+    <img src="img/logo_main.png" alt="logo_main">
+</header>
+      <div class="form">
+        <div class="formContent">
+            
+                <label for="wheel">Wheel No</label><br>
+                <input type="number" id="wheelNumber" name="wheelNumber" value=""></br></br>
+                <button  class="mainButton" onclick="getWheel()">Search</button>
+            </div>
+        </div>
+        </br>
+      <table id="table" style="width:100%">
+          <tr>
+            <th>Set</th>
+            <th>Wheel No</th>
+            <th>Position</th>
+            <th>TPMS</th>
+            <th>Tyre</th>
+            <th>Weight</th>
+          </tr>
+      </table>
+
+    </div>
+    <p id="obID" hidden="true"></p>
+    <p id="foundSet" hidden="true"></p>
+
+    <div class="form">
+     <div class="formContent">
+            <label for="tyre">Tyre No</label><br>
+            <input type="number" id="tyreNumber" name="tyreNumber" value=""><br>
+            <label for="tyre">Weight</label><br>
+            <input type="number" id="weight" name="weight" value=""><br><br>
+            <button class="mainButton" onclick="updateWheel()">Update</button>
+    </div>
+  </div>
+  <div id="footer" class="w3-display-bottomleft">
+    <div class="row">
+        <div class="column">
+            <img src="img/scanWheel.png" style="width:100%"; onclick="wheelScan()" alt="scan_image">
+        </div>
+        <div class="column">
+            <img src="img/scanTyre.png" style="width:100%" onclick="tyreScan()" alt="scan_image">
+        </div>
+    </div>
+  </div>
+
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+
+
+
+
+</script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>
